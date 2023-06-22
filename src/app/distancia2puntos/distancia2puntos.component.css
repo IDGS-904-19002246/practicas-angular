@@ -1,0 +1,10 @@
+.margen{
+    margin: 8px;
+    display: inline-block;
+}
+.container{
+    margin: 64px;
+}
+mat-form-field{
+    padding: 16px;
+}
