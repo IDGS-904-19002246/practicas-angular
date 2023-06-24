@@ -1,0 +1,8 @@
+.opt{
+    background-color: var(--bg);
+    color:var(--t);
+}
+
+.tdd{
+    background-color: var(--bg);
+}

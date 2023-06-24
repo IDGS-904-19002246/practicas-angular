@@ -8,19 +8,27 @@ import { Distancia2puntosComponent } from './distancia2puntos/distancia2puntos.c
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
 import { ModModule } from './distancia2puntos/mod/mod.module';
+// import { ResistenciasComponent } from './resistencias/resistencias.component';
+import { ModResModule } from './resistencias/mod-res/mod-res.module';
+import { CinepolisComponent } from './cinepolis/cinepolis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Distancia2puntosComponent
+    Distancia2puntosComponent,
+    // ResistenciasComponent,
+    CinepolisComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-
-    ModModule
+        
+    ModModule,
+    ModResModule
   ],
   providers: [],
   bootstrap: [AppComponent]
