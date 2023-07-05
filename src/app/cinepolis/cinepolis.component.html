@@ -1,45 +1,66 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-        <div class="row">
-            <label for="">Nombre</label>
-            <input type="text">
+<div class="container bg-primary">
+    <div class="row p-4 m-4">
+        <h1 class="text-center"><b>Cinepolis</b></h1>
+
+        <div class="col-md-4">
+            <form  #formulario="ngForm" (ngSubmit)="Calcular(formulario)">
+                <fieldset class="border p-4 rounded">
+                    <legend class="p-2 flo colorW">InPuts</legend>
+
+                    <label><b>Nombre</b></label>
+                    <input class="float-end w-50" name="Name" [(ngModel)]="formData.Name" type="text" >
+                    <hr>
+                    <label><b>Cantidad Personas</b></label>
+                    <input class="float-end w-25" name="NPeople" [(ngModel)]="formData.NPeople" type="number" required>
+                    <hr>
+                    <label><b>Tarjeta Cinepolis</b></label>
+                    <div class="float-end w-25">
+                        <input type="radio" value="No" name="CreditCard" [(ngModel)]="formData.CreditCard" required>
+                        <label for=""><b>No</b></label>
+                    </div>
+                    <div class="float-end w-25">
+                        <input type="radio" value="Si" name="CreditCard" [(ngModel)]="formData.CreditCard">
+                        <label for=""><b>Sí</b></label>
+                    </div>
+                    <hr>
+                    <label><b>Cantidad Boletos ($12)</b></label>
+                    <input class="float-end w-25" name="NTickets" [(ngModel)]="formData.NTickets" type="number" required>
+                    <hr>
+
+                    
+                </fieldset>
+            </form>
         </div>
-        
-        <div class="row">
-            <label for="">Cantidad Personas</label>
-            <input type="number">
+
+
+        <div class="col-md-3">
+            <fieldset class="border p-4 rounded">
+                <legend class="p-2 flo colorW">Buttons</legend>
+                <button type="submit" (click)="Calcular(formulario)"
+                [disabled]="!formulario.form.valid"
+                 class="btn btn-light">Procesar</button>
+            </fieldset>
+
+            <fieldset class="border p-4 rounded">
+                <legend class="p-2 flo colorW">OutPut</legend>
+                <label><b>Valor a pagar</b></label>
+                <input class="float-end w-50" type="number" [(ngModel)]="end" readonly>
+            </fieldset>
+
         </div>
-        
-        <div class="row">
-            <label for="">Tarjeta Cinepolis</label>
-            <div>
-                <input type="radio"><label for="">Sí</label>
-                <input type="radio"><label for="">No</label>
-            </div>
+
+        <div class="col-md-5">
+            <fieldset class="border p-4 rounded">
+                <legend class="p-2 flo colorW">Conditions</legend>
+                <ul>
+                    <li>No mas de 7 boletos por persona</li>
+                    <li>2 boletos o menos no tienen descuento</li>
+                    <li>3, 4 y 5 boletos == 10% descuento</li>
+                    <li>Más de 5 boletos == 15% descuento</li>
+                    <li>Pagos hechos con tarjeta == 10% descuento</li>
+                </ul>
+            </fieldset>
         </div>
-    
-        <div class="row">
-            <label for="">Cantidad Boletos</label>
-            <input type="number">
-        </div>
+
     </div>
-
-
-    <div class="col-md-3">
-        <div class="p-4">
-            <h4>Buttons</h4>
-        </div>
-
-        <div class="p-4">
-            <h4>OutPut</h4>
-            
-        </div>
-    </div>
-
-    </div>
-
-    
-    
-
 </div>

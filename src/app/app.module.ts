@@ -13,14 +13,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModModule } from './distancia2puntos/mod/mod.module';
 // import { ResistenciasComponent } from './resistencias/resistencias.component';
 import { ModResModule } from './resistencias/mod-res/mod-res.module';
-import { CinepolisComponent } from './cinepolis/cinepolis.component';
-
+import { CinepolisModule } from './cinepolis/cinepolis/cinepolis.module';
+import { MenuComponent } from './menu/menu.component';
+import { AppRoutingModule } from './app.routing.module';
 @NgModule({
   declarations: [
     AppComponent,
     Distancia2puntosComponent,
+
+    MenuComponent
     // ResistenciasComponent,
-    CinepolisComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,10 @@ import { CinepolisComponent } from './cinepolis/cinepolis.component';
     BrowserAnimationsModule,
         
     ModModule,
-    ModResModule
+    ModResModule,
+    CinepolisModule,
+
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
